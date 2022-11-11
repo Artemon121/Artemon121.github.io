@@ -1,7 +1,62 @@
 
+:root {
+    --g1: rgb(90, 66, 226);
+    --g2: rgb(0, 156, 255);
+    --g3: rgb(0, 250, 132);
+}
+
 body {
-    background: #2c2c2c;
+    background: #171717;
     color: #d0d0d0;
     font-family: 'Nunito', sans-serif;
     display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+@keyframes text-background-gradient-scroll-right {
+    from {
+        background-position: 0% center;
+    }
+
+    to {
+        background-position: 200% center;
+    }
+}
+
+.background {
+    
+    width: 30em;
+    height: 5em;
+    
+    display: flex;
+    border-radius: 1em;
+    background: #191919;
+    box-shadow:  20px 20px 60px #0d0d0d, -20px -20px 60px #252525;
+}
+
+.main-text {
+    position: absolute;
+    margin: 0;
+    margin: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    font-weight: 700;
+    background-image: linear-gradient(
+        to right,
+        var(--g1),
+        var(--g2),
+        var(--g3),
+        var(--g1)
+    );
+    background-size: 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: text-background-gradient-scroll-right 5s linear infinite;
 }
